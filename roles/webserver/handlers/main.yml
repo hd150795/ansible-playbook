@@ -1,0 +1,3 @@
+---
+- name: Create healthcheck
+  copy: content="" dest=/var/www/html/healthcheck.html

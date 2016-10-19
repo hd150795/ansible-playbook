@@ -51,3 +51,10 @@
 
 - name: wait for tomcat to start
   wait_for: port={{http_port}}
+
+- name: creating /tomcat7/webapps folder
+  command: /usr/bin/mkdir /var/lib/tomcat7
+  command: /usr/bin/mkdir /var/lib/tomcat7/webapps
+
+- name: deploying app 
+  copy: /target/SpringMVCSecurityXML.war /var/lib/tomcat7/webapps 

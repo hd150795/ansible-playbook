@@ -53,7 +53,7 @@
   command: /usr/bin/mkdir /var/lib/tomcat7/webapps
 
 - name: deploying app 
-  copy: /target/SpringMVCSecurityXML.war /var/lib/tomcat7/webapps 
+  copy: src=/target/SpringMVCSecurityXML.war dest=/var/lib/tomcat7/webapps 
 
 
 - name: wait for tomcat to start

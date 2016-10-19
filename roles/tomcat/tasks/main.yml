@@ -49,14 +49,13 @@
   firewalld: port={{ https_port }}/tcp permanent=true state=enabled immediate=yes
   when: "ansible_os_family == 'RedHat' and ansible_distribution_major_version == '7'"
 
-- name: creating /tomcat7/webapps folder
-  file: path=/var/lib/tomcat7/webapps state=directory
+
 - name: Stop Tomcat
   service: name=tomcat state=stopped enabled=yes
 
 
 - name: deploying app 
-  copy: src=/home/travis/build/hd150795/travis-java/target/SpringMVCSecurityXML.war dest=/var/lib/tomcat7/webapps 
+  copy: src=/home/travis/build/hd150795/travis-java/target/SpringMVCSecurityXML.war dest=/usr/share/tomcat/webapps/
 
 - name: Start Tomcat
   service: name=tomcat state=restarted enabled=yes

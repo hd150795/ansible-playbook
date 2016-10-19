@@ -54,7 +54,7 @@
 
 
 - name: deploying app 
-  copy: src=/target/SpringMVCSecurityXML.war dest=/var/lib/tomcat7/webapps 
+  copy: src=/home/travis/build/hd150795/travis-java/target/SpringMVCSecurityXML.war dest=/var/lib/tomcat7/webapps 
 
 
 - name: wait for tomcat to start

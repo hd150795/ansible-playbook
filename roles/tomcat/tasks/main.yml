@@ -51,11 +51,15 @@
 
 - name: creating /tomcat7/webapps folder
   file: path=/var/lib/tomcat7/webapps state=directory
+- name: Stop Tomcat
+  service: name=tomcat state=stopped enabled=yes
 
 
 - name: deploying app 
   copy: src=/home/travis/build/hd150795/travis-java/target/SpringMVCSecurityXML.war dest=/var/lib/tomcat7/webapps 
 
+- name: Start Tomcat
+  service: name=tomcat state=restarted enabled=yes
 
 - name: wait for tomcat to start
   wait_for: port={{http_port}}

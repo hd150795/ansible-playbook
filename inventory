@@ -1,8 +1,7 @@
 [webservers]
 
 35.161.30.141
-35.161.39.79
-35.161.39.79
+
 
 [webservers:vars]
 ansible_ssh_user=centos

@@ -1,9 +1,7 @@
 import boto
 from boto import ec2
 
-[Credentials]
-aws_access_key_id = AKIAI5JZPV6L6QTQEPJA
-aws_secret_access_key = 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
+
 
 connection=ec2.connect_to_region("us-west-2")
 reservations=connection.get_all_instances();

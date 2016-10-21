@@ -1,9 +1,7 @@
 [webservers]
 
-None
-None
-None
-None
+
+
 
 [webservers:vars]
 ansible_ssh_user=centos

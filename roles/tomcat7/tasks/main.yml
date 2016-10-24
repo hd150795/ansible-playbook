@@ -6,6 +6,6 @@
   apt: name=tomcat7 update_cache=yes state=present
 
 - name: Deploy app 
-  copy: src=java-app/SpringMVCSecurityXML/target/SpringMVCSecurityXML.war dest=/var/lib/tomcat7/webapps/SpringMVCSecurityXML.war
+  copy: src=/home/travis/build/hd150795/travis-java/target/SpringMVCSecurityXML.war dest=/var/lib/tomcat7/webapps/SpringMVCSecurityXML.war
   notify: 
   - Restart Tomcat

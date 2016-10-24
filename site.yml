@@ -4,4 +4,4 @@
 - hosts: webservers
   sudo: yes
   roles:
-    - tomcat7
+    - tomcat

@@ -1,6 +1,6 @@
 ---
 - name: Install Java 
-  apt: name=openjdk-7-jre update_cache=yes state=present
+  apt: name=openjdk-7-jre update_cache=yes state=latest
 
 - name: install tomcat
   apt: name=tomcat7 update_cache=yes state=present

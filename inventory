@@ -1,7 +1,5 @@
 [webservers]
 
-None
-None
 
 
 [webservers:vars]

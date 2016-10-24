@@ -1,9 +1,5 @@
 [webservers]
 
-35.161.120.210
-None
-None
-
 
 
 [webservers:vars]

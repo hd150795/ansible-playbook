@@ -1,6 +1,0 @@
----
-- hosts: webservers
-  sudo: yes
-  roles:
-  - webserver
-

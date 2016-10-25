@@ -5,8 +5,10 @@
 - name: Install Tomcat
   apt: name=tomcat7 update_cache=yes state=present
 
-- name: Clean webapps directory
-  file: path=/var/lib/tomcat7/webapps/ROOT state=absent
+- name: Deploy index file
+  template: src=index.j2 dest=/var/lib/tomcat7/webapps/ROOT/index.html
+  notify:
+    - Restart Tomcat
 
 - name: Deploy Website
   copy: src=../target/SpringMVCSecurityXML.war dest=/var/lib/tomcat7/webapps/SpringMVCSecurityXML.war

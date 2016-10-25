@@ -1,2 +1,2 @@
 ---
-cluster_name: webservers
+cluster_name: ganglia-server

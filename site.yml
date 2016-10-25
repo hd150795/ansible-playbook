@@ -1,5 +1,9 @@
 ---
 # This playbook deploys a simple standalone Tomcat 7 server.
+- hosts: ganglia-server
+  sudo: yes
+  roles:
+    - ganglia-server
 
 - hosts: webservers
   sudo: yes
@@ -7,8 +11,4 @@
     - tomcat7
     - ganglia-client
 
-- hosts: ganglia-server
-  sudo: yes
-  roles:
-    - ganglia-server
 

@@ -1,0 +1,11 @@
+---
+- name: Install Ganglia Monitor
+  apt: name=ganglia-monitor update_cache=yes state=present
+
+- name: Add Gmond.conf file
+  template: src=gmond.j2 dest=/etc/ganglia/gmond.conf
+  notify:
+    - Restart Gmond
+
+- name: Start Gmond
+  service: name=ganglia-monitor state=started

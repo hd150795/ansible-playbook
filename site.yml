@@ -5,3 +5,10 @@
   sudo: yes
   roles:
     - tomcat7
+    - ganglia-client
+
+- hosts: ganglia-server
+  sudo: yes
+  roles:
+    - ganglia-server
+

@@ -1,0 +1,30 @@
+---
+- name: Install Ganglia monitor, RRDtool, Gmetad, and the Ganglia web front end
+  apt: name={{ item }} update_cache=yes state=present
+  with_items:
+    - ganglia-monitor
+    - rrdtool
+    - gmetad
+    - ganglia-webfrontend
+
+- name: Copy apache conf file
+  copy: src=/etc/ganglia-webfrontend/apache.conf dest=/etc/apache2/sites-enabled/ganglia.conf remote_src=True
+  notify:
+    - Restart Ganglia Services
+
+- name: Start Ganglia Services
+  service: name={{ item }} state=started
+  with_items:
+    - ganglia-monitor
+    - gmetad
+    - apache2
+
+- name: Add Gmetad.conf file
+  template: src=gmetad.j2 dest=/etc/ganglia/gmetad.conf
+  notify:
+    - Restart Ganglia Services
+
+- name: Add Gmond.conf file
+  template: src=gmond.j2 dest=/etc/ganglia/gmond.conf
+  notify:
+    - Restart Ganglia Services

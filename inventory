@@ -1,5 +1,16 @@
 [webservers]
 
-[webservers:vars]
+35.160.235.196
+
+[ganglia-server]
+35.161.105.82
+
+[cluster:children]
+webservers
+ganglia-server
+
+[cluster:vars]
 ansible_ssh_user=ubuntu
 ansible_ssh_private_key_file=key.pem
+
+

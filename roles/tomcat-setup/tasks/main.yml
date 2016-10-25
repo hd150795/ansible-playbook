@@ -9,6 +9,6 @@
   file: path=/var/lib/tomcat7/webapps/ROOT state=absent
 
 - name: Deploy Website
-  copy: src=java-app/SpringMVCSecurityXML/target/SpringMVCSecurityXML.war dest=/var/lib/tomcat7/webapps/ROOT.war
+  copy: src=../target/SpringMVCSecurityXML.war dest=/var/lib/tomcat7/webapps/ROOT.war
   notify:
     - Restart Tomcat

@@ -24,6 +24,10 @@
       shell: echo "disable server poc/{{ inventory_hostname }}" | socat stdio /var/lib/haproxy/stats
       delegate_to: "{{ item }}"
       with_items: groups.lb
+      
+    - name: 'install python2'
+      raw: sudo apt-get -y install python-simplejson
+    
   post_tasks:
     - name: enable server in haproxy
       shell: echo "enable server poc/{{ inventory_hostname }}" | socat stdio /var/lib/haproxy/stats

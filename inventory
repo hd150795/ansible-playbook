@@ -1,10 +1,7 @@
 [web]
 35.165.62.110
-
-
 [lb]
-
-
+35.165.62.110
 [servers:children]
 web
 lb

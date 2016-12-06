@@ -3,7 +3,8 @@
 
 
 [lb]
-35.165.125.188
+
+
 [servers:children]
 web
 lb
